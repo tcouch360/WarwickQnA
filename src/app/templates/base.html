@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>{{ title }} | StackOverflow</title>
+    <title>{{ title }} | Warwick Q&A</title>
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <link rel="stylesheet" type="text/css" href="/static/css/theme.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/newStyle.css">
@@ -30,13 +30,14 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand topnav" href="{{ url_for('mod_home.index') }}">StackOverflow</a>
+              <a class="navbar-brand topnav" href="{{ url_for('mod_home.index') }}">Warwick Q&A</a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
+                  <li><a href="{{ url_for('mod_question.addQuestion') }}">Ask</a></li>
                   <li><a href="{{ url_for('mod_user.dashboard') }}">Dashboard</a></li>
-                  <li><a href="{{ url_for('mod_user.profile', username = g.user.username) }}">My Profile</a></li>
+                  <li><a href="{{ url_for('mod_user.profile', username = g.user.username) }}">Search Profiles</a></li>
                   <li><a href="{{ url_for('mod_auth.logout') }}">Logout</a></li>
                   <li><a><i class="fa fa-user"></i>  Hi, {{ current_user.username }}!</a></li>
                 {% else %}
@@ -68,7 +69,7 @@
                         <li><a href="{{ url_for('mod_auth.login') }}">Login</a></li>
                         {% endif %}
                     </ul>
-                    <p class="copyright text-muted small">Copyright © 2017. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright © 2022. All Rights Reserved</p>
                 </div>
             </div>
         </div>
