@@ -13,13 +13,13 @@
 			<!--<a href = "{{ url_for('mod_vote.questionUpvote', question_id = question.question_id) }}" class="btn btn-success btn-block btn-default">Upvotes: 
 				<span style="font-weight: bold;">{{ question.upvotes.all()|length }}</span>
 			</a>-->
-			<a id="question-upvote-{{ question.question_id }}" class="btn btn-success btn-block btn-default" onclick="questionUpvote(this)">Upvotes: 
-				<span style="font-weight: bold;">{{ question.upvotes.all()|length }}</span>
+			<a id="question-upvote-{{ question.question_id }}" class="btn btn-success btn-block btn-default" onclick="questionUpvote(this)">
+				<i class="fa fa-thumbs-up">{{ question.upvotes.all()|length }}</i>
 			</a>
 		{% else %}
-			<a href = "{{ url_for('mod_vote.questionUpvote', question_id = question.question_id) }}" onclick="return false;" style="cursor: default;" class="btn btn-success btn-block btn-default">Upvotes: 
-				<span style="font-weight: bold;">{{ question.upvotes.all()|length }}
-				</span>
+			<a href = "{{ url_for('mod_vote.questionUpvote', question_id = question.question_id) }}" onclick="return false;" style="cursor: default;" class="btn btn-success btn-block btn-default">
+				<i class="fa fa-thumbs-up">{{ question.upvotes.all()|length }}</i>
+
 			</a>
 		{% endif %}
 		</td>
@@ -29,13 +29,12 @@
 				<span style="font-weight: bold;">{{ question.downvotes.all()|length }}
 				</span>
 			</a>-->
-			<a id="question-downvote-{{ question.question_id }}" class="btn btn-success btn-block btn-default" onclick="questionDownvote(this)">Downvotes: 
-				<span style="font-weight: bold;">{{ question.downvotes.all()|length }}</span>
+			<a id="question-downvote-{{ question.question_id }}" class="btn btn-success btn-block btn-default" onclick="questionDownvote(this)">
+				<i class="fa fa-thumbs-down">{{ question.downvotes.all()|length }}</i>
 			</a>
 		{% else %}
-			<a href = "{{ url_for('mod_vote.questionDownvote', question_id = question.question_id) }}" onclick="return false;" style="cursor: default;" class="btn btn-success btn-block btn-default">Downvotes: 
-				<span style="font-weight: bold;">{{ question.downvotes.all()|length }}
-				</span>
+			<a href = "{{ url_for('mod_vote.questionDownvote', question_id = question.question_id) }}" onclick="return false;" style="cursor: default;" class="btn btn-success btn-block btn-default">
+				<i class="fa fa-thumbs-down">{{ question.downvotes.all()|length }}</i>
 			</a>
 		{% endif %}
 		</td>

@@ -132,7 +132,7 @@ var questionDownvote = function (button) {
 		url: url,
 		error: dispError,
 		success: function (response) {
-			$("#"+id).html("Downvotes: <span style=\"font-weight: bold;\">" + response["downvotes"] + "</span>");
+			$("#"+id).html("<i class=\"fa fa-thumbs-down\">" + response["downvotes"] + "</i>");
 		},
 	});
 }
@@ -150,7 +150,7 @@ var questionUpvote = function (button) {
 		error: dispError,
 		success: function (response) {
 			console.log(response["upvotes"]);
-			$("#"+id).html("Upvotes: <span style=\"font-weight: bold;\">" + response["upvotes"] + "</span>");
+			$("#"+id).html("<i class=\"fa fa-thumbs-up\">" + response["upvotes"] + "</i>");
 		},
 	});
 }
