@@ -1,5 +1,5 @@
-from flask_wtf import Form, RecaptchaField
-from wtforms import StringField, BooleanField, PasswordField, SubmitField, ValidationError, TextAreaField, SelectMultipleField, SelectField
+from flask_wtf import Form
+from wtforms import StringField, PasswordField, SubmitField, ValidationError, TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo
 from app.mod_user.models import User
 
@@ -8,7 +8,6 @@ class RegistrationForm(Form):
 	username = StringField('Username', validators = [DataRequired()])
 	password = PasswordField('Password', validators = [DataRequired(), EqualTo('confirm_password')])
 	confirm_password = PasswordField('Confirm Password')
-	recaptcha = RecaptchaField()
 	submit = SubmitField('Register')
 
 	def validate_email(self, field):
