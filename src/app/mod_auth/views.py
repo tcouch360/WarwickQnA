@@ -19,8 +19,10 @@ def register():
 		user = User(email = form.email.data, username = form.username.data, password = form.password.data)
 		db.session.add(user)
 		db.session.commit()
-		flash("You have succesfully registered! You may now login")
-		return redirect(url_for('mod_auth.login'))
+		# registration successful, log user in immediately and take to dashboard.
+		login_user(user)
+		return redirect(url_for('mod_user.dashboard'))
+		#return redirect(url_for('mod_auth.login'))
 	return render_template('mod_auth/register.html',form = form, title = "Register")
 
 @mod_auth.route('/login', methods = ['GET', 'POST'])
