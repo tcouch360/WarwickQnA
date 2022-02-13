@@ -1,16 +1,14 @@
-from flask import render_template, flash, redirect, url_for, session, g, request, Blueprint
-from flask_login import login_required, login_user, logout_user, current_user
-from app import app, db, login_manager
-from ..forms import LoginForm, RegistrationForm, QuestionForm, AnswerForm, TagForm
+from flask import render_template, g, Blueprint
+from flask_login import current_user
+from app import app, db
+from ..forms import TagForm
 from app.mod_user.models import User
 from app.mod_question.models import Question
-from app.mod_answer.models import Answer
 from app.mod_vote.models import Upvote, Downvote
 from app.mod_comment.models import Comment
 from app.mod_tag.models import Tag
 from datetime import datetime
 from sqlalchemy import and_
-#from . import mod_tag
 mod_tag = Blueprint('mod_tag', __name__)
 
 @mod_tag.route('/searchByTags', methods = ['GET', 'POST'])
