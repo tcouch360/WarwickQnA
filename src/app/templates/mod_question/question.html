@@ -3,9 +3,12 @@
 <div class="well well-lg">
 	{{ question.body }}
 </div>
+{% if question.code|length > 1 %}
+<h3 style="text-align: left;"> Code:</h3>
 <pre class="prettyprint" style="text-align: justify;">
 	{{ question.code }}
 </pre>
+{% endif %}
 <table class="table table-condensed" style="padding: 0px; margin-right: 0px;">
 	<tr>
 		<td>
