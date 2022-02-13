@@ -1,15 +1,17 @@
-from flask import render_template, flash, redirect, url_for, session, g, request, Blueprint
-from flask_login import login_required, login_user, logout_user, current_user
-from app import app, db, login_manager
-from ..forms import QuestionForm
 from datetime import datetime
+
+from flask import render_template, redirect, url_for, g, Blueprint
+from flask_login import login_required, current_user
 from sqlalchemy import and_
-from .models import Question
-from app.mod_user.models import User
+
+from app import app, db
 from app.mod_answer.models import Answer
-from app.mod_tag.models import Tag
-from app.mod_vote.models import Upvote, Downvote
 from app.mod_comment.models import Comment
+from app.mod_tag.models import Tag
+from app.mod_user.models import User
+from app.mod_vote.models import Upvote, Downvote
+from .models import Question
+from ..forms import QuestionForm
 
 mod_question = Blueprint('mod_question', __name__)
 

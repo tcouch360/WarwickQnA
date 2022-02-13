@@ -1,16 +1,16 @@
-from flask import render_template, flash, redirect, url_for, session, g, request, Blueprint
-from flask_login import login_required, login_user, logout_user, current_user
-from app import app, db, login_manager
-from ..forms import AnswerForm
-from app.mod_answer.models import Answer
-from app.mod_user.models import User
-from app.mod_question.models import Question
-from app.mod_tag.models import Tag
-from app.mod_vote.models import Upvote, Downvote
-from app.mod_comment.models import Comment
 from datetime import datetime
+
+from flask import render_template, redirect, url_for, g, Blueprint
+from flask_login import login_required, current_user
 from sqlalchemy import and_
-from ..mod_question import views
+
+from app import app, db
+from app.mod_answer.models import Answer
+from app.mod_comment.models import Comment
+from app.mod_question.models import Question
+from app.mod_user.models import User
+from app.mod_vote.models import Upvote, Downvote
+from ..forms import AnswerForm
 
 mod_answer = Blueprint('mod_answer', __name__)
 """ This is the function which adds answer to a particular queation"""
@@ -58,7 +58,7 @@ def utility_processor():
 @app.context_processor
 def answer_comments():
 	def get_answer_comments(answer_id):
-		"""filters answers by anser_id and returns an object of comments filtered"""
+		"""filters answers by answer_id and returns an object of comments filtered"""
 		return Comment.query.filter_by(answer_id = answer_id).all()
 	return dict(get_answer_comments = get_answer_comments)
 

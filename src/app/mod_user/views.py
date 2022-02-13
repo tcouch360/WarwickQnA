@@ -80,7 +80,7 @@ def utility_processor():
 @app.context_processor
 def answer_comments():
     def get_answer_comments(answer_id):
-        """filters answers by anser_id and returns an object of comments filtered"""
+        """filters answers by answer_id and returns an object of comments filtered"""
         return Comment.query.filter_by(answer_id=answer_id).all()
 
     return dict(get_answer_comments=get_answer_comments)
