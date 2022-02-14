@@ -5,6 +5,8 @@
 A simple Q&A app using Flask and sqlite
 https://github.com/tcouch360/WarwickQnA
 
+This app was developed in pycharm. Pycharm workspace files are included in this repository.
+
 * README
 
 ** Prerequisites
