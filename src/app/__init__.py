@@ -3,7 +3,17 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask import render_template
-#from . import context_processors
+
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object('config')
+    db = SQLAlchemy(app)
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+    login_manager.login_message = "You must be logged in to access this page"
+    login_manager.login_view = "login"
+    Bootstrap(app)
+    return app
 
 app = Flask(__name__)
 app.config.from_object('config')
