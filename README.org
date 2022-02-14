@@ -1,48 +1,33 @@
 #+TITLE:  Warwick Q&A
-#+DATE: 28th January 2022
+#+DATE: 13th Febuary 2022
 
 * Overview
 A simple Q&A app using Flask and sqlite
-
+https://github.com/tcouch360/WarwickQnA
 
 * README
 
 ** Prerequisites
 
-- You should have python3 and pip3 installed:
+- python3 installed
+- pip3 installed
 
-- First check if python3 is intstalled by using the command:
+- To check the python3 version:
 #+BEGIN_SRC python
   python3 -V
 #+END_SRC
 
 - Output:
 #+BEGIN_SRC 
-  Python 3.5.2
+  Python 3.7.x
 #+END_SRC
-  
-- If not installed then type the following:
-#+BEGIN_SRC 
-  sudo apt-get update
-  sudo apt-get -y update
-#+END_SRC
-** Instructions for installing pip
 
-#+BEGIN_SRC 
-sudo apt-get install python3-pip
 
-#+END_SRC
-** Instructions for installing few more packages and development tools for the programming environment
+** Getting started
 
-#+BEGIN_SRC 
-sudo apt-get install build-essential libssl-dev libffi-dev python-dev
-#+END_SRC
-** Installing
+- Getting started with the application is fairly straightforward
 
-- Getting our web app up and running is simple. 
-- To run it you have to do what you do with most flask apps.
-
-** Setting up virtual environment:
+** Setting up a virtual environment:
 
 #+BEGIN_SRC 
 virtualenv -p /usr/bin/python3 name_of_your_environment
@@ -56,7 +41,7 @@ pip install -r requirements.txt
 
 ** Running the web app :
 #+BEGIN_SRC python 
-python run.py # The web app can be run in http://127.0.0.1:5000
+python run.py # The web app is set to run on http://127.0.0.1:8080. This can be changed by modifying the run.py
 #+END_SRC
 
 
